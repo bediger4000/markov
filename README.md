@@ -72,3 +72,32 @@ The image `dot` generates is the "transition diagram"
 of the text.
 
 ![example text transition diagram](fox.png)
+
+### Generate text based on transition probability
+
+```
+$ go build transitions.go
+$ ./transitions -I 200 -N 1000 -cc 0.6667 -cv 0.3333 -vv 0.1667 -vc 0.8333 > output
+200 V/C: 0.4014
+400 V/C: 0.4250
+600 V/C: 0.4127
+800 V/C: 0.3872
+...
+9400 V/C: 0.3929
+9600 V/C: 0.3916
+9800 V/C: 0.3939
+10000 V/C: 0.3949
+```
+
+The generated text is 80-character lines
+of `a` (for vowels) and `b` (for consonants).
+You can feed it back into `paircounter` to see if the vowel-to-consonant
+and proportions of overlapping pairs is the same as
+the original input text.
+
+The ratio of vowels-to-consonants appears on stderr as the program
+executes to demonstrate near convergence.
+Since the transitions are made based on random number generator output,
+no two runs of `transitions` are identical,
+and different runs converge on different ratios.
+```
