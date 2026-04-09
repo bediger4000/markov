@@ -9,7 +9,7 @@ These are the programs I wrote to verify that they were telling the truth.
 ### Choose letters randomly
 
 This program generates text using a given probability of
-choosing a consonant.
+choosing a consonant (the only other choice is a vowel).
 The generated text is a series of `a` (a vowel) or `b` (a consonant)
 characters.
 
@@ -22,7 +22,6 @@ The example command line will create a file with 10,000 letters,
 all 'a' or 'b'.
 About 62.74% (6,274) of the letters will be `b`,
 the rest `a`.
-
 The probability of choosing a vowel is 1.00 - consonant probability.
 
 ### Count overlapping pairs of letters
@@ -33,7 +32,7 @@ $ ./paircounter < output // or
 $ ./paircounter output
 ```
 
-The `paircounter` program counts letters as consonants or vowels.
+The `paircounter` program classifies letters as consonants or vowels.
 It looks at pairs of letters, and counts the 4 categories of pairs
 (CC, CV, VV, VC).
 
@@ -60,7 +59,7 @@ VC 5 (0.8333)
 
 `paircounter` can also produce [Dot](https://graphviz.org/doc/info/lang.html)
 format output,
-suitable for use with [graphviz](https://graphviz.org/)
+suitable for use with [GraphViz](https://graphviz.org/)
 graph layout programs.
 
 ```
