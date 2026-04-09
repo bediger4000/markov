@@ -42,3 +42,33 @@ has overlapping pairs th, he, eq, qu, ui, ic, ck, kb,
 br, ro, ow, wn, nf, fo, ox, xj, ju, um, mp, ps.
 That's  10 CC pairs,
 5 CV pairs, 1 VV pair ("ui") and 5 VC pairs.
+
+The output of `paircounter` looks like this:
+
+```
+$ echo "the quick brown fox jumps" | ./paircounter
+total letters 21
+consonants 15 (0.7143)
+vowels     6 (0.2857)
+
+CC 10 (0.6667)
+CV 5 (0.3333)
+VV 1 (0.1667)
+VC 5 (0.8333)
+21 total pairs
+```
+
+`paircounter` can also produce [Dot](https://graphviz.org/doc/info/lang.html)
+format output,
+suitable for use with [graphviz](https://graphviz.org/)
+graph layout programs.
+
+```
+$ echo "the quick brown fox jumps" | ./paircounter -g > fox.dot
+$ dot -Tpng -o fox.png fox.dot
+```
+
+The image `dot` generates is the "tranisiton diagram"
+of the text.
+
+![example text transition diagram](fox.png)
