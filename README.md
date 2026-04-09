@@ -68,7 +68,7 @@ $ echo "the quick brown fox jumps" | ./paircounter -g > fox.dot
 $ dot -Tpng -o fox.png fox.dot
 ```
 
-The image `dot` generates is the "tranisiton diagram"
+The image `dot` generates is the "transition diagram"
 of the text.
 
 ![example text transition diagram](fox.png)
