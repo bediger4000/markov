@@ -39,7 +39,7 @@ func main() {
 		return
 	}
 
-	if (*startStateC && *startStateV) || !(*startStateC && *startStateV) {
+	if *startStateC && *startStateV {
 		fmt.Fprintf(os.Stderr, "only one of -C or -V can/must be set\n")
 	}
 
